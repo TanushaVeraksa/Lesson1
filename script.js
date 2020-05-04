@@ -98,6 +98,7 @@ let students = [
 for(let i = 0; i<students.length; i++) {
     let studentGrades = students[i].grades;
     let studentGender = students[i].gender;
+    let studentAge = students[i].age;
     let sum = 0;
 
     for(let j = 0; j<studentGrades.length; j++) {
@@ -105,7 +106,7 @@ for(let i = 0; i<students.length; i++) {
     }
 
     let averageMark = sum/studentGrades.length;
-    if(averageMark < 3 && studentGender === "male") {
+    if(studentAge >= 18 && studentAge < 27 && averageMark < 3 && studentGender === "male") {
         students[i]["isReadyForArmy"] = true;
         delete students[i].grades;
         delete students[i].course;
